@@ -1,0 +1,131 @@
+@model List<HelloMVC.Models.CustomerViewModel>
+@using HelloMVC.Models;
+try
+            {
+                myConnection.Open();
+                SqlCommand myCommand = new SqlCommand("SELECT Customer.CustomerID, Customer.Customer_Name, Customer.Customer_Surname, Customer.Customer_ContactNumber, Customer.Customer_Email, Customer.Customer_Address, Customer.Customer_Username, Customer.Customer_Password, Customer.GenderID, Gender.GenderDescription, Customer.LanguageID, Preferred_Language.LanguageName, Customer.Access_LevelID, User_Roles.Access_LevelID, Customer.UserTypeID, User_Type.UserTypeID FROM Customer INNER JOIN Gender ON Customer.GenderID = Gender.GenderID INNER JOIN Preferred_Language ON Customer.LanguageID = Preferred_Language.LanguageID INNER JOIN User_Roles ON Customer.Access_LevelID = User_Roles.Access_LevelID INNER JOIN User_Type ON Customer.UserTypeID = User_Type.UserTypeID", myConnection);
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                customerList.Clear();
+                while (myReader.Read())
+                {
+                    CustomerViewModel customer = new CustomerViewModel();
+                    customer.ID = myReader["CustomerID"].ToString();
+                    customer.Name = myReader["Customer_Name"].ToString();
+                    customer.Surname = myReader["Customer_Surname"].ToString();
+                    //customer.Date = (DateTime)myReader["Customer_DateOfBirth"];
+                    customer.ContactNumber = myReader["Customer_ContactNumber"].ToString();
+                    customer.Email = myReader["Customer_Email"].ToString();
+                    customer.Address = myReader["Customer_Address"].ToString();
+                    customer.Username = myReader["Customer_Username"].ToString();
+                    customer.Password = myReader["Customer_Password"].ToString();
+                    //customer.Status = (int)myReader["Customer_Status"];
+                    //customer.Version = (int)myReader["Customer_Version"];
+
+                    customer.Gender.ID = myReader["GenderID"].ToString();
+                    customer.Gender.Description = myReader["GenderDescription"].ToString();
+
+                    customer.Language.ID = myReader["LanguageID"].ToString();
+                    customer.Language.Name = myReader["LanguageName"].ToString();
+
+                    customer.UserRole.ID = myReader["Access_LevelID"].ToString();
+                    customer.UserRole.Description = myReader["Access_LevelDescription"].ToString();
+
+                    customer.UserType.ID = myReader["UserTypeID"].ToString();
+                    customer.UserType.Description = myReader["UserTypeDescription"].ToString();
+
+                    customerList.Add(customer);
+                }
+
+
+@if (ViewBag.Status != 0)
+{
+    <div class="row crudContainer">
+        <h1>Customer</h1>
+        <a href="@Url.Action("Insert", "Home")" class="btn plainAddButton" title="Add Customer"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                @*<th>Date Of Birth</th>*@
+                <th>Contact Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Username</th>
+                <th>Password</th>
+                @*<th>Status</th>
+                <th>Version</th>*@
+                <th>Language</th>
+                <th>User Role</th>
+                <th>User Type</th>
+            </tr>
+            @foreach (CustomerViewModel customer in Model)
+            {
+                <tr>
+                    <td>@customer.ID</td>
+                    <td>@customer.Name</td>
+                    <td>@customer.Surname</td>
+                    <td>@customer.Gender.Description</td>
+                    @*<td>@customer.Date</td>*@
+                    <td>@customer.ContactNumber</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Address</td>
+                    <td>@customer.Username</td>
+                    <td>@customer.Password</td>
+                    @*<td>@customer.Status</td>
+                    <td>@customer.Version</td>*@
+                    <td>@customer.Language.Name</td>
+                    <td>@customer.UserRole.Description</td>
+                    <td>@customer.UserType.Description</td>
+                    <td>
+                        <a href="@Url.Action("Update", "Home", new { id = customer.ID })">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Delete", "Home", new { id = customer.ID })">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+  public string ID { get; set; }
+        public string Name { get; set; }
+
+        public string Surname { get; set; }
+
+        //public DateTime Date { get; set; }
+
+        public string ContactNumber { get; set; }
+
+        public string Email { get; set; }
+
+        public string Address { get; set; }
+
+        public string Username { get; set; }
+        
+        public string Password { get; set; }
+
+        //public int Status { get; set; }
+
+        //public int Version { get; set; }
+
+        public GenderViewModel Gender { get; set; }
+
+        public LanguageViewModel Language { get; set; }
+
+        public UserRoleViewModel UserRole { get; set; }
+
+        public UserTypeViewModel UserType { get; set; }
+
+        public CustomerViewModel()
+        {
+            Gender = new GenderViewModel();
+            Language = new LanguageViewModel();
+            UserRole = new UserRoleViewModel();
+            UserType = new UserTypeViewModel();
+        }

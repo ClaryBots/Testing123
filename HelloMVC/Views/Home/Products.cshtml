@@ -1,0 +1,257 @@
+﻿<script src="https://code.jquery.com.jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<link href="~/StyleSheet1.css" rel="stylesheet" />
+<link href="~/StyleSheet2.css" rel="stylesheet" />
+<link href="~/StyleSheet3.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Add Product</h3>
+    </div>
+
+
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Product Details</h3>
+        </div>
+        <div class="panel-body">
+            @*<h4>Product ID:<span class="label label-default"></span></h4>
+                <input class="form-control" type="text" placeholder="" readonly>*@
+            <div class="row">
+                <div class="col-md-3">
+                    <h4><span style="font-weight:bold">Product Name:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Product Name" aria-describedby="basic-addon1">
+                </div>
+                <div class="col-md-3">
+                    <h4><span style="font-weight:bold">Product Type:<span class="label label-default"></span></span></h4>
+                    <select class="form-control form-control-sm">
+                        <option>Cleaning</option>
+                        <option>Outdoor</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <h4><span style="font-weight:bold">Stock On-Hand:<span class="label label-default"></span></span></h4>
+                    <input type="number" style="height:33px" value="0" data-decimals="0" min="0" max="2000" step="1" />
+                </div>
+                <div class="col-md-3">
+                    <h4><span style="font-weight:bold">Description:<span class="label label-default"></span></span></h4>
+                    <textarea class="form-control" style="width:400px" placeholder="Description" rows="5" id="comment"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Batch Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12" style="height:5px;"></div>
+            <table class="table table-bordered">
+                <thead style="background-color: rgb(171,7,46);color:white">
+                    <tr>
+                        <th scope="col">Batch Number</th>
+                        <th scope="col">Storage Type</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Unit of Measure</th>
+                        <th scope="col">Batch Quantity</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Discount Expiry Date</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>
+                            <select class="form-control form-control-sm">
+                                <option>Box</option>
+                                <option>Pallete</option>
+                                <option>Rope</option>
+                                <option>Plastic</option>
+                                <option>Cable Tyre</option>
+                                <option>Clingwrap</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input class="form-control" type="text" placeholder="Price">
+                        </td>
+                        <td>
+                            <select class="form-control form-control-sm">
+                                <option>Kilogram</option>
+                                <option>Gram</option>
+                                <option>Ton</option>
+                                <option>Litre</option>
+                                <option>Metre</option>
+                                <option>Milligram</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" style="height:33px" value="1" data-decimals="0" min="1" max="2000" step="1" />
+                        </td>
+                        <td>
+                            <input type="number" style="height:33px" value="1" data-decimals="0" min="1" max="2000" step="1" />
+                        </td>
+                        <td>
+                            <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                <input class="span2" style="height:33px" size="16" type="text" value="14-06-2018">
+                                <span class="add-on"><i class="icon-remove"></i></span>
+                                <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove-circle" style="color:rgb(171, 7, 46);font-size:25px;text-align:center"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="col-xs-12" style="height:5px;"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-plus" style="color:white"></span>  Add New Batch Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="width:1000px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Image Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12" style="height:5px;"></div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="panel panel-default" style="width:150px;height:150px">
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <table class="table table-bordered">
+                        <thead style="background-color: rgb(171,7,46);color:white">
+                            <tr>
+                                <th scope="col">Image Number</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <span class="glyphicon glyphicon-remove-circle" style="color:rgb(171, 7, 46);font-size:25px;text-align:center"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-md-4">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-plus" style="color:white"></span>  Add Image</button>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>
+
+
+    <div class="panel panel-default" style="width:590px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Warehouse Details</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead style="background-color: rgb(171,7,46);color:white">
+                    <tr>
+                        <th scope="col">Warehouse ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Stock Quantity</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>
+                            <select class="form-control form-control-sm">
+                                <option>Warehouse A</option>
+                                <option>Warehouse B</option>
+                                <option>Warehouse C</option>
+                                <option>Warehouse D</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" style="height:33px" value="0" data-decimals="0" min="0" max="2000" step="1" />
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove-circle" style="color:rgb(171, 7, 46);font-size:25px;text-align:center"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="col-xs-12" style="height:5px;"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-plus" style="color:white"></span>  Add Warehouse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="panel panel-default" style="width:1000px">
+            <div class="panel-heading">
+                <h3 class="panel-title">Warehouse Details</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4><span style="font-weight:bold">Warehouse Name:<span class="label label-default"></span></span></h4>
+                        <select class="form-control form-control-sm">
+                            <option>Warehouse A</option>
+                            <option>Warehouse B</option>
+                            <option>Warehouse C</option>
+                            <option>Warehouse D</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <h4><span style="font-weight:bold">Warehouse Stock Quantity:<span class="label label-default"></span></span></h4>
+                        <input type="number" style="height:33px" value="0" data-decimals="0" min="0" max="2000" step="1" />
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-ok" style="color:white"></span>  Add Product</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-refresh" style="color:white"></span>  Clear All Fields</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+

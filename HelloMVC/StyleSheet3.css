@@ -1,0 +1,15 @@
+﻿body {
+}
+
+#buttons {
+    color: white;
+    width: 300px;
+    background-color: #26282c;
+}
+
+#mainButton {
+    color: white;
+    width: 300px;
+    background-color: #26282c;
+    height: 55px;
+}

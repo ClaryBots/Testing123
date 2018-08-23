@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Prodist</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="https://code.jquery.com.jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/StyleSheet2.css" rel="stylesheet" />
+    <link href="~/StyleSheet3.css" rel="stylesheet" />
+    <link href="~/StyleSheet4.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(171, 7, 46)">
+        <div class="container-fluid">
+            <div class="navbar-header" style="font-family:serif">
+                <a class="navbar-brand" href="#" style="font-size:30px"><span style="color:white">PRO-TRI</span></a>
+            </div>
+            <form class="navbar-form navbar-right">
+                <div class="row">
+                    <div class="form-group">
+                        <a class="navbar-brand" href="http://localhost:13834/Home/Login"><span class="glyphicon glyphicon-user" style="color:white"></span><span style="color:white"> Logout</span></a>
+                    </div>
+                    <div class="form-group">
+                        <a class="navbar-brand" href="http://localhost:13834/Home/MaintainCustomers"><span class="glyphicon glyphicon-wrench" style="color:white"></span><span style="color:white"> Edit My Profile</span></a>
+                    </div>
+                </div>              
+            </form>
+            <form id="form1">
+                <div id="menu">
+                    <ul style="background-color: #26282c" class="list-unstyled components" id="menu">
+                        <li><button class="accordion" style="background-color: #26282c" href="http://localhost:13834/Home/Home"><span class="glyphicon glyphicon-dashboard" style="color:white"></span>  Home</button></li>
+                        <li>
+                             <!-- Customers -->
+                            <button class="accordion" style="background-color: #26282c" href="#customerSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-user" style="color:white"></span>   Customers</button>
+                            <ul class="collapse list-unstyled" id="customerSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Customers">Customer Registration</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchCustomers">Search Customers</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainCustomers">Edit Profile</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/DeleteCustomers">Manage Customer Accounts</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Employees -->
+                            <button class="accordion" style="background-color: #26282c" href="#employeeSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-briefcase" style="color:white"></span>   Employees</button>
+                            <ul class="collapse list-unstyled" id="employeeSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Employees">Employee Registration</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchEmployees">Search Employees</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainEmployees">Edit Profile</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/DeleteEmployees">Manage Employee Accounts</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Products -->
+                            <button class="accordion" style="background-color: #26282c" href="#productSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-wrench" style="color:white"></span>   Products</button>
+                            <ul class="collapse list-unstyled" id="productSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Products">Add Product</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchProducts">Search Products</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainProducts">Maintain Product</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/ProductTypes">Add Product Type</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchProductTypes">Search For Product Types</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainProductTypes">Maintain Product Type</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CaptureStockTake">Capture Stock Take</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Ordering -->
+                            <button class="accordion" style="background-color: #26282c" href="#orderingSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart" style="color:white"></span>   Ordering</button>
+                            <ul class="collapse list-unstyled" id="orderingSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/PlaceOrder">Place Order</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchOrders">Search Orders</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CancelOrders">Cancel Order</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CapturePayments">Capture Payment</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CompletePackingOrders">Complete Packing Orders</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/AssignOrdersToWarehouse">Assign Order to Warehouse</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/AssignOrdersToCouriers">Assign Order to Courier</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CaptureOrderReturns">Capture Order Returns</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Supplier -->
+                            <button class="accordion" style="background-color: #26282c" href="#supplierSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-gift" style="color:white"></span>   Suppliers</button>
+                            <ul class="collapse list-unstyled" id="supplierSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Supplier">Add Supplier</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchSuppliers">Search Suppliers</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainSuppliers">Maintain Supplier</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Supplier Ordering -->
+                            <button class="accordion" style="background-color: #26282c" href="#supplierOrderingSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-list-alt" style="color:white"></span>   Supplier Ordering</button>
+                            <ul class="collapse list-unstyled" id="supplierOrderingSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/PlacePurchaseOrder">Place Purchase Order</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchPurchaseOrder">Search Purchase Orders</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CancelPurchaseOrder">Cancel Purchase Order</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CapturePurchasePayment">Capture Purchase Payment</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/ReceivePurchaseOrder">Receive Purchase Orders</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/ViewSupplierBackOrders">View Supplier Back Orders</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/CaptureSupplierReturns">Capture Supplier Returns</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Courier -->
+                            <button class="accordion" style="background-color: #26282c" href="#courierSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-send" style="color:white"></span>   Couriers</button>
+                            <ul class="collapse list-unstyled" id="courierSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Courier">Courier Registration</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchCouriers">Search Couriers</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainCouriers">Edit Profile</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/DeleteCouriers">Manage Courier Accounts</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/ViewCourierOrders">View Courier Orders</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Reporting -->
+                            <button class="accordion" style="background-color: #26282c" href="#reportingSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-folder-open" style="color:white"></span>   Reporting</button>
+                            <ul class="collapse list-unstyled" id="reportingSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Reporting">Generate Reports</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- Warehouse -->
+                            <button class="accordion" style="background-color: #26282c" href="#warehouseSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-home" style="color:white"></span>   Warehouses</button>
+                            <ul class="collapse list-unstyled" id="warehouseSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/Warehouse">Add Warehouse</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchWarehouses">Search Warehouses</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainWarehouses">Maintain Warehouse</a></li>
+                            </ul>
+
+                        <li>
+                            <!-- User Roles -->
+                            <button class="accordion" style="background-color: #26282c" href="#userRolesSubmenu" data-toggle="collapse" aria-expanded="false"><span class="glyphicon glyphicon-check" style="color:white"></span>   User Roles</button>
+                            <ul class="collapse list-unstyled" id="userRolesSubmenu">
+                                <li><a class="sub" href="http://localhost:13834/Home/UserRoles">Add User Role</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/SearchUserRoles">Search User Roles</a></li>
+                                <li><a class="sub" href="http://localhost:13834/Home/MaintainUserRoles">Maintain User Role</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

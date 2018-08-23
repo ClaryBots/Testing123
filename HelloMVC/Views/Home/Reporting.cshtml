@@ -1,0 +1,443 @@
+﻿
+<script src="https://code.jquery.com.jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+@{
+    ViewBag.Title = "Reporting";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Reporting</h3>
+    </div>
+    <h1> </h1>
+
+
+    <div id="exTab2" class="container" style="width:1200px">
+        <ul class="nav nav-tabs" style="font-size:14px">
+            <li class="active">
+                <a href="#1" style="color:black" data-toggle="tab">Customer Order Report</a>
+            </li>
+            <li>
+                <a href="#2" style="color:black" data-toggle="tab">Courier Report</a>
+            </li>
+            <li>
+                <a href="#3" style="color:black" data-toggle="tab">Supplier Feedback Report</a>
+            </li>
+            <li>
+                <a href="#4" style="color:black" data-toggle="tab">Sales Report</a>
+            </li>
+            <li>
+                <a href="#5" style="color:black" data-toggle="tab">Audit Trail Report</a>
+            </li>
+            <li>
+                <a href="#6" style="color:black" data-toggle="tab">Product Sales</a>
+            </li>
+        </ul>
+
+        <div class="tab-content ">
+            <div class="tab-pane active" id="1">
+                <h2> </h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Customer Order Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">Start Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">End Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>                           
+                        </div>  
+                        <div class="col-xs-12" style="height:15px;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>Name</option>
+                                            <option>Surname</option>
+                                            <option>Date of Birth</option>
+                                            <option>Contact Number</option>
+                                            <option>Email</option>
+                                            <option>Address</option>
+                                            <option>Gender</option>
+                                            <option>Language</option>
+                                            <option>User Role</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="height:15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                       
+                    </div>
+                </div>               
+            </div>
+            <div class="tab-pane" id="2">
+                <h2></h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Courier Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">Start Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">End Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="height:15px;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>Courier ID</option>
+                                            <option>Name</option>
+                                            <option>Surname</option>
+                                            <option>Description</option>
+                                            <option>Username</option>
+                                            <option>Contact Person - Name</option>
+                                            <option>Contact Person - Email</option>
+                                            <option>Contact Person - Fax</option>
+                                            <option>Contact Person - Address</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="height:15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="3">
+                <h2></h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Supplier Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">Start Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">End Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="height:15px;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>Supplier ID</option>
+                                            <option>Name</option>
+                                            <option>Description</option>
+                                            <option>Contact Person - Name</option>
+                                            <option>Contact Person - Contact Number</option>
+                                            <option>Contact Person - Email</option>
+                                            <option>Contact Person - Fax</option>
+                                            <option>Address</option>
+                                            <option>Address Type</option>
+                                            <option>Suburb</option>
+                                            <option>Postal Code</option>
+                                            <option>City</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="height:15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="4">
+                <h2></h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sales Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">Start Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">End Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="height:15px;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>Order Number</option>
+                                            <option>Customer Name</option>
+                                            <option>Customer Surname</option>
+                                            <option>Product</option>
+                                            <option>Date</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="height:15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="5">
+                <h2></h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Courier Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">Start Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">End Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="height:15px;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>User ID</option>
+                                            <option>Name</option>
+                                            <option>Surname</option>
+                                            <option>User Type ID</option>
+                                            <option>Access Level ID</option>
+                                        </select>
+                                    </div>
+                                    @*<div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>*@
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>Product ID</option>
+                                            <option>Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="height:15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="6">
+                <h2></h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Product Sale Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">Start Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span style="font-weight:bold">End Time Frame:<span class="label label-default"></span></span></h4>
+                                <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <input class="span2" style="height:33px" size="16" type="text" value="00-00-0000">
+                                    <span class="add-on"><i class="icon-remove"></i></span>
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="height:15px;"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                                        <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                                        <select class="form-control form-control-sm">
+                                            <option>Product ID</option>
+                                            <option>Name</option>
+                                            <option>Description</option>
+                                            <option>Product Type</option>
+                                            <option>Stock On-Hand</option>
+                                            <option>Price</option>
+                                            <option>Batch Quantity</option>
+                                            <option>Unit of Measure</option>
+                                            <option>Discount</option>
+                                            <option>Discount Expiry Date</option>
+                                            <option>Warehouse Stock</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-top:28px">
+                                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add more criteria</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12" style="height:15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn-group" role="group" aria-label="...">
+                                            <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr><hr>
+
+  
+</div>
+

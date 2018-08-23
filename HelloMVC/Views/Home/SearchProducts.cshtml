@@ -1,0 +1,193 @@
+﻿
+<script src="https://code.jquery.com.jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+@{
+    ViewBag.Title = "SearchProducts";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Search Products</h3>
+    </div>
+
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Criteria</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                </div>
+                <div class="col-md-3">
+                    <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                    <select class="form-control form-control-sm">
+                        <option>Product ID</option>
+                        <option>Name</option>
+                        <option>Description</option>
+                        <option>Product Type</option>
+                        <option>Stock On-Hand</option>
+                        <option>Price</option>
+                        <option>Batch Quantity</option>
+                        <option>Unit of Measure</option>
+                        <option>Discount</option>
+                        <option>Discount Expiry Date</option>
+                        <option>Warehouse Stock</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top:28px">
+                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add More Criteria</span></a>
+                </div>
+            </div>
+            <div class="col-xs-12" style="height:10px;"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="panel panel-default" style="width:550px; height:405px">
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="panel panel-default" style="width:588px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search Results - Product Details</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><span style="font-weight:bold">Product Name:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="Product Name" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><span style="font-weight:bold">Product Type:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="Product Type" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><span style="font-weight:bold">Description:<span class="label label-default"></span></span></h4>
+                            <textarea class="form-control" placeholder="Description" rows="5" id="comment" readonly></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><span style="font-weight:bold">Stock On-Hand:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="Stock On-Hand" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+                    @*<h4>Product ID:<span class="label label-default"></span></h4>
+                <input class="form-control" type="text" placeholder="" readonly>*@
+                    @*<div class="row">
+                        <div class="col-md-3">
+                            <h4><span style="font-weight:bold">Product Name:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><span style="font-weight:bold">Product Type:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><span style="font-weight:bold">Description:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><span style="font-weight:bold">Stock On-Hand:<span class="label label-default"></span></span></h4>
+                            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+
+            <div class="col-xs-12" style="height:3px;"></div>
+            
+            <div class="panel panel-default" style="width:588px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Warehouse Details</h3>
+                </div>
+                <div class="panel-body">
+                    @*<h4><span style="font-weight:bold">Warehouse Stock:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" readonly>*@
+                    <table class="table table-bordered">
+                        <thead style="background-color: rgb(171,7,46);color:white">
+                            <tr>
+                                <th scope="col">Warehouse Number</th>
+                                <th scope="col">Warehouse Name</th>
+                                <th scope="col">Stock Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Batch Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12" style="height:5px;"></div>
+            <table class="table table-bordered">
+                <thead style="background-color: rgb(171,7,46);color:white">
+                    <tr>
+                        <th scope="col">Batch Number</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Unit of Measure</th>
+                        <th scope="col">Batch Quantity</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Discount Expiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    @*<div class="panel panel-default" style="width:500px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Warehouse Details</h3>
+        </div>
+        <div class="panel-body">
+            <h4><span style="font-weight:bold">Warehouse Stock:<span class="label label-default"></span></span></h4>
+            <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" readonly>
+        </div>
+    </div>*@
+
+
+    @*<div class="row">
+        <div class="col-md-4">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-chevron-right" style="color:white"></span>  Proceed To Maintain</button>
+            </div>
+        </div>
+    </div>*@
+</div>
+

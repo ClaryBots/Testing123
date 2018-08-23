@@ -1,0 +1,193 @@
+﻿
+@model List<HelloMVC.Models.CustomerViewModel>
+@using HelloMVC.Models;
+
+<script src="https://code.jquery.com.jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<link href="~/StyleSheet1.css" rel="stylesheet" />
+<link href="~/StyleSheet2.css" rel="stylesheet" />
+<link href="~/StyleSheet3.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "SearchCustomers";
+}
+
+@if (ViewBag.Status != 0)
+{
+    <div class="row crudContainer">
+        <h1>Customer</h1>
+        <a href="@Url.Action("Insert", "Home")" class="btn plainAddButton" title="Add Customer"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Date Of Birth</th>
+                <th>Contact Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>Language</th>
+                <th>User Role</th>
+                @*<th>User Type</th>*@
+            </tr>
+            @foreach (CustomerViewModel customer in Model)
+            {
+                <tr>
+                    <td>@customer.ID</td>
+                    <td>@customer.Name</td>
+                    <td>@customer.Surname</td>
+                    <td>@customer.Date</td>
+                    <td>@customer.ContactNumber</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Address</td>
+                    <td>@customer.Username</td>
+                    <td>@customer.Password</td>
+                    <td>@customer.Gender.Description</td>
+                    <td>@customer.Language.Name</td>
+                    <td>@customer.UserRole.Description</td>
+                    @*<td>@customer.UserType.Description</td>*@
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>Search Customers</h3>
+    </div>
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Criteria</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Search Criteria:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Search Criteria" aria-describedby="basic-addon1">
+                </div>
+                <div class="col-md-3">
+                    <h4><span style="font-weight:bold">Search Type:<span class="label label-default"></span></span></h4>
+                    <select class="form-control form-control-sm">
+                        <option>Name</option>
+                        <option>Surname</option>
+                        <option>Date of Birth</option>
+                        <option>Contact Number</option>
+                        <option>Email</option>
+                        <option>Address</option>
+                        <option>Gender</option>
+                        <option>Language</option>
+                        <option>User Role</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top:28px">
+                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus-sign" style="color:rgb(171, 7, 46)"></span><span style="color:rgb(171, 7, 46)"> Add More Criteria</span></a>
+                </div>  
+            </div> 
+            <div class="col-xs-12" style="height:15px;"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-search" style="color:white"></span>  Search</button>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Results - Customer Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Name:<span class="label label-default"></span></span></h4>
+                    @*<input type="text" class="form-control" name="customerName" placeholder="Name" aria-describedby="basic-addon1" readonly>*@
+                    @Html.TextBox("name", null, new { @class = "form-control", @placeholder = "Name", required = "required" })
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Surname:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Surname" aria-describedby="basic-addon1" readonly>
+                </div>
+            </div>
+            <h4></h4>
+            <h4><span style="font-weight:bold">Date of birth:<span class="label label-default"></span></span></h4>
+            <input type="text" class="form-control" placeholder="Date of Birth" aria-describedby="basic-addon1" readonly>
+            <h4></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Contact Number:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Contact number" aria-describedby="basic-addon1" readonly>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Email:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" readonly>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Address:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Address" aria-describedby="basic-addon1" readonly>
+                </div>
+            </div>
+             @*Split button*@ 
+            <h4></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Gender:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Gender" aria-describedby="basic-addon1" readonly>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Language:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Language" aria-describedby="basic-addon1" readonly>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">User Role:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="User Role" aria-describedby="basic-addon1" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Username:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" readonly>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Password:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" readonly>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Account Status:<span class="label label-default"></span></span></h4>
+                    <input type="text" class="form-control" placeholder="Account Status" aria-describedby="basic-addon1" readonly>
+                </div>
+            </div>  
+            
+            <div class="col-xs-12" style="height:25px;"></div> 
+            
+            <table class="table table-bordered">
+                <thead style="background-color: rgb(171,7,46);color:white">
+                    <tr>
+                        <th scope="col">Contact Person #</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Fax</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </tbody>
+            </table>                
+        </div>
+    </div>
+</div>
+
+

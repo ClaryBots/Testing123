@@ -1,0 +1,84 @@
+﻿body {
+}
+
+/*Navigation panes*/
+
+#main {
+    margin-left: 100px;
+    margin-top: 50px;
+    padding: 0px 10px;
+}
+
+.sub {
+    background-color: #26282c;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding-left: 25px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #26282c;
+}
+
+#menu {
+    list-style:none;
+}
+
+#menu {
+    height: 100%; 
+    width: 300px;
+    position: fixed; 
+    z-index: 1; 
+    top: 70px; 
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 20px;
+    background-color: #26282c;
+    font-size:20px;
+    font-family: serif;
+}
+
+#menu a:hover{
+    color: white;
+}
+
+.accordion {
+    background-color: #26282c;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:before {
+    content: '+'; /* Unicode character for "plus" sign (+) */
+    font-size: 20px;
+    padding: 0px 0px 0px 5px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion:active {
+    content: "-"; /* Unicode character for "minus" sign (-) */
+    font-size: 20px;
+    padding: 0px 0px 0px 5px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+
+.active, .sub:hover {
+    background-color: #ccc;
+}

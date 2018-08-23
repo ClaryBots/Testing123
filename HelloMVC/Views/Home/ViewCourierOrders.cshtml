@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "ViewCourierOrders";
+}
+
+<div id="main">
+    <div class="" style="text-align:center;padding-left:120px">
+        <h3>View Courier Orders</h3>
+    </div>
+
+    <div class="panel panel-default" style="width:1200px">
+        <div class="panel-heading">
+            <h3 class="panel-title">User Role Details</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Filter By:<span class="label label-default"></span></span></h4>
+                    <select class="form-control form-control-sm">
+                        <option>Ascending</option>
+                        <option>Descending</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <h4><span style="font-weight:bold">Sort By:<span class="label label-default"></span></span></h4>
+                    <select class="form-control form-control-sm">
+                        <option>Order Number</option>
+                        <option>Order Date</option>
+                        <option>Customer Name</option>
+                        <option>Customer Surname</option>
+                        <option>Contact Number</option>
+                        <option>Email</option>
+                        <option>Fax</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12" style="height:25px;"></div>
+
+            <table class="table table-bordered">
+                <thead style="background-color: rgb(171,7,46);color:white">
+                    <tr>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Order Date</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Customer Surname</th>
+                        <th scope="col">Contact Number</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Confirm Delivery Pickup</th>
+                        <th scope="col">Confirm Delivery Dropoff</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" style="font-size:25px" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" style="font-size:25px" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" id="buttons"><span class="glyphicon glyphicon-ok" style="color:white"></span>  Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
